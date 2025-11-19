@@ -1,98 +1,41 @@
-# ============================================================
-# NODE & PACKAGE MANAGERS
-# ============================================================
-node_modules/
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
+.pnpm-debug.log*
 
-# ============================================================
-# ENVIRONMENT CONFIG
-# ============================================================
-.env
-.env.local
-.env.*.local
+# env files (can opt-in for committing if needed)
+.env*
 
-# Template should be committed
-!.env.example
+# vercel
+.vercel
 
-# ============================================================
-# BUILD OUTPUTS
-# ============================================================
-dist/
-build/
-coverage/
-
-# ============================================================
-# PRISMA
-# ============================================================
-# Prisma migrations (should be committed!)
-!/prisma/migrations/
-
-# Prisma schema (should be committed!)
-!/prisma/schema.prisma
-
-# Generated Prisma Client (should NOT be committed!)
-generated/
-app/generated/
-app/generated/prisma/
-src/generated/
-src/generated/prisma/
-
-# Query Engine binaries (auto generated)
-*.node
-*.wasm
-
-# ============================================================
-# LOGS
-# ============================================================
-logs/
-*.log
-logs/*.log
-
-# PM2 logs
-.pmt2/
-
-# ============================================================
-# OS FILES
-# ============================================================
-.DS_Store
-Thumbs.db
-
-# ============================================================
-# EDITORS & IDE
-# ============================================================
-.vscode/*
-!.vscode/settings.json
-!.vscode/extensions.json
-!.vscode/launch.json
-
-.idea/
-*.swp
-
-# ============================================================
-# DOCKER & COMPOSE
-# ============================================================
-docker-data/
-docker-compose.override.yml
-
-# ============================================================
-# TEMPORARY FILES
-# ============================================================
-*.tmp
-*.temp
-
-# ============================================================
-# TYPESCRIPT
-# ============================================================
+# typescript
 *.tsbuildinfo
-
-# ============================================================
-# SMART CONTRACTS (if you add later)
-# ============================================================
-# Artifacts build (Hardhat / Foundry)
-artifacts/
-cache/
-typechain/
-typechain-types/
+next-env.d.ts
