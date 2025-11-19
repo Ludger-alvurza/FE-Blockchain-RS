@@ -2,6 +2,8 @@
 import { Patient } from "@/interfaces/index";
 import PatientCard from "@/components/PatientCard";
 
+export const dynamic = "force-dynamic";
+
 async function fetchPatients(): Promise<Patient[]> {
   const res = await fetch("http://localhost:3001/patients", {
     cache: "no-store",

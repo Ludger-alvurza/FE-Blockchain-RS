@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Data } from "../interfaces";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   try {
     const res = await fetch("http://localhost:3001/", {
