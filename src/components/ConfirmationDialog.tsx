@@ -2,18 +2,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-
-interface ConfirmationDialogProps {
-  isOpen: boolean;
-  title: string;
-  message: string;
-  confirmText?: string;
-  cancelText?: string;
-  isDangerous?: boolean;
-  isLoading?: boolean;
-  onConfirm: () => void | Promise<void>;
-  onCancel: () => void;
-}
+import { ConfirmationDialogProps } from "@/interfaces/comfirmation-dialog";
 
 export default function ConfirmationDialog({
   isOpen,
@@ -36,11 +25,19 @@ export default function ConfirmationDialog({
 
   const handleConfirm = async () => {
     console.log("Confirm button clicked");
+
     try {
       await onConfirm();
     } catch (error) {
       console.error("Error in onConfirm:", error);
     }
+
+    // Tutup animasi modal setelah konfirmasi selesai
+    setIsAnimating(false);
+
+    setTimeout(() => {
+      onCancel(); // biar parent matiin isOpen
+    }, 300); // sama kayak cancel agar konsisten
   };
 
   const handleCancel = () => {

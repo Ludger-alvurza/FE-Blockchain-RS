@@ -3,7 +3,8 @@ interface Data {
   title: string;
   people: string[];
 }
-//Patient data interface
+
+// Patient data interface
 interface Patient {
   patient_id: string;
   wallet_did: string;
@@ -20,11 +21,22 @@ interface Patient {
   created_at: string;
   updated_at: string;
 }
-//props interface
+
+// Props interface
 interface PatientDetailPageProps {
   params: Promise<{
     id: string;
   }>;
 }
 
-export type { Data, Patient, PatientDetailPageProps };
+// Page props interfaces
+interface PageProps {
+  searchParams: Promise<{
+    id?: string;
+  }>;
+}
+
+// Re-export semua dari access-control
+export * from "./access-control";
+
+export type { Data, Patient, PatientDetailPageProps, PageProps };

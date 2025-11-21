@@ -1,10 +1,5 @@
 // components/LoadingFallback.tsx
-interface LoadingFallbackProps {
-  message?: string;
-  size?: "sm" | "md" | "lg";
-  fullScreen?: boolean;
-}
-
+import { LoadingFallbackProps } from "@/interfaces/loading-fallback";
 export default function LoadingFallback({
   message = "Memuat data...",
   size = "md",
